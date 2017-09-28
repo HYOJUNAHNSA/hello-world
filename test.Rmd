@@ -1,0 +1,120 @@
+---
+title: "gang0928test"
+author: "R-korea -ML"
+date: "2017년 9월 28일"
+output: html_document
+---
+
+## Extensions of the Linear Model
+
+* additive
+* linear
+
+ 선형모델을 확장하는 classical approaches는 무엇일까?
+
+
+-----
+
+### Removing the Additive Assumption
+
+$$sales = \beta_0 + \beta_1 \ X \ TV + \beta_2 X radio + \beta_3 X newspaper + \epsilon $$
+
+1. The linear models that formed the basis for this conclusion assumed that the effect on sales of increasing
+one advertising medium is independent of the amount spent on the other
+media.
+
+2. 이러한 모델이 맞지 않는다면?
+ +  $100,000 vs $50,000 + $50,000 
+ +  판매량의 증가가 다를 수 있다!
+
+> Synergy effect or Interaction effect
+
+-----
+
+$$Y = \beta_0\ + \beta_1X_1 + \beta_2X_2 + \epsilon.$$
+
+
+**모델을 확장하기 위해 interaction term을 포함시켜본다.**
+
+$$Y = \beta_0\ + \beta_1X_1 + \beta_2X_2 + \beta_3X_1X_2 \epsilon\\
+Y = \beta_0\ + (\beta_1 + \beta_3X_2)X_1 + \beta_2X_2 + \epsilon\\
+=\beta_0 +\tilde(\beta_1)X_1 + \beta_2X_2 +\epsilon$$
+
+
+* $\widetilde(\beta1)$ changes with $X_2$
+
+
+* $X_2$를 변화 시키면 Y에 대한 $X_1$의 효과가 변할 것!
+  
+  
+---
+
+**For example**
+
+
+![](\Users\loveactualry\Pictures\various\20170928_1.PNG)
+
+$$sales = \beta_0 + \beta_1XTV + \beta_2Xradio + \beta_3X(radioXTV)+\epsilon\\
+=\beta_0+(\beta_1+\beta_3Xradio)XTV+\beta_2Xradio+\epsilon$$
+
+* $\beta_3$ as the increase in the effectiveness of TV advertising for a one unit increase in radio advertising (or vice-versa).
+    
+          
+                 
+                 
+![](\Users\loveactualry\Pictures\various\20170928_2.PNG)
+..
+
+* 라디오 광고 지출이 $1,000 증가한다면?
+* The hierarchical principle states that if we include an interaction in a model, we should also include the main effects,even if the p-values associated with their coefficients are not significant.
+* $X_1$과 $X_2$의 상관관계를 고려
+
+---
+###Exampe of inter action effect
+
+![](\Users\loveactualry\Pictures\various\20170928_3.PNG)
+.
+
+.
+
+
+> In the absence of an interaction term
+
+![](\Users\loveactualry\Pictures\various\20170928_4.PNG)
+
+* Different intercepts, but same slope (left-had panel of upper picture)
+* The fact that the lines are parallel means that the average effect on balance of a one-unit increase in income does not depend on whether or not the individual is a student(소득 변화 학생여부에 따르지 않고 credit card만 영향을 받는다.).
+
+> Created by multiplying income with the dummy variable for student.
+
+![](\Users\loveactualry\Pictures\various\20170928_5.PNG)
+
+* Different intercepts and different slopes.
+* This allows for the possibility that changes in income may affect the credit card balances of students and non-students differently.
+* 소득 변화가 신용카드 대금에 미치는 영향이 학생 여부에 따라 다른지 살펴볼 수 있다.
+* 소득 증가에 따른 카드 대금 증가가 학생이 더 낮다고 볼 수 있다.
+
+
+
+###Non-linear Relationships
+
+![](\Users\loveactualry\Pictures\various\20170928_6.PNG)
+.
+
+.
+
+* orange line represents the linear regression fit.
+* it seems clear that this relationship is in fact non-linear: the data suggest a curved relationship.
+* seem to have a quadratic shape
+
+$$ mpg = \beta_0 + \beta_1Xhorsepower + \beta_2Xhorsepower^2 + \epsilon$$
+___________________________________________________________________________________________________
+![](\Users\loveactualry\Pictures\various\20170928_7.PNG)
+.
+
+.
+
+
+* If including horsepower2 led to such a big improvement in themodel, why not include horsepower3, horsepower4, or even horsepower5?
+* -> it is unclear that including the additional terms really has led to a better fit to the data.
+* We further explore this approach and other non-linear extensions of the linear model in Chapter 7.
