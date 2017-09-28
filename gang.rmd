@@ -19,7 +19,7 @@ output:
 
 ### Removing the Additive Assumption
 
-$sales = \beta_0 + \beta_1 \ X \ TV + \beta_2 X radio + \beta_3 X newspaper + \epsilon$ 
+$ sales = \beta_0 + \beta_1 \ X \ TV + \beta_2 X radio + \beta_3 X newspaper + \epsilon $ 
 
 1. The linear models that formed the basis for this conclusion assumed that the effect on sales of increasing
 one advertising medium is independent of the amount spent on the other
